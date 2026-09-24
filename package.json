@@ -1,0 +1,21 @@
+{
+  "name": "twitch-tower-defense",
+  "version": "1.0.0",
+  "description": "Chat spawns enemies, streamer defends. Transparent OBS overlay + control panel.",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^18.0.3",
+    "express": "^5.2.1",
+    "tmi.js": "^1.8.5",
+    "ws": "^8.21.3"
+  }
+}

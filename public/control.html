@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TD Control Panel</title>
+<link rel="stylesheet" href="css/control.css">
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>Twitch Tower Defense</h1>
+    <div class="stats">
+      <span class="stat lives">❤ <b id="lives">–</b></span>
+      <span class="stat gold">⛃ <b id="gold">–</b></span>
+      <span class="stat">☠ <b id="kills">–</b></span>
+      <span class="stat">⏱ <b id="elapsed">–</b></span>
+      <span class="stat" id="conn" title="server connection">●</span>
+    </div>
+    <div class="actions">
+      <button id="pause">Pause</button>
+      <button id="reset" class="danger">Reset game</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="board">
+      <canvas id="game"></canvas>
+    </section>
+
+    <aside>
+      <h2>Build</h2>
+      <div id="build" class="build"></div>
+      <p class="hint">Pick a tower, click a free cell. Right-click or Esc cancels. Click a tower to select it.</p>
+
+      <h2>Selected tower</h2>
+      <div id="selected" class="selected">
+        <p class="muted">Nothing selected</p>
+      </div>
+
+      <h2>Top leakers</h2>
+      <ol id="leaders" class="leaders"></ol>
+
+      <h2>Simulate chat</h2>
+      <form id="devchat" class="devchat">
+        <input id="devuser" placeholder="user" value="Viewer1">
+        <input id="devmsg" placeholder="!spawn goblin 3" autocomplete="off">
+        <button>Send</button>
+      </form>
+      <div class="quick">
+        <button data-msg="!spawn goblin 3">goblins</button>
+        <button data-msg="!spawn wolf 2">wolves</button>
+        <button data-msg="!spawn orc">orc</button>
+        <button data-msg="!spawn knight">knight</button>
+        <button data-msg="!spawn tank">tank</button>
+        <button data-msg="!spawn boss">boss</button>
+        <button data-msg="!coins">!coins</button>
+        <button data-msg="!shop">!shop</button>
+        <button data-msg="!rich">+coins</button>
+      </div>
+
+      <h2>Log</h2>
+      <div id="log" class="log"></div>
+    </aside>
+  </main>
+</div>
+<script type="module" src="js/control.js"></script>
+</body>
+</html>

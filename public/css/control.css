@@ -1,0 +1,54 @@
+:root {
+  --bg: #15171c; --panel: #1f2229; --panel2: #262a33; --text: #e8e8ea; --muted: #8b90a0;
+  --accent: #9147ff; --gold: #ffd54f; --red: #ef5350; --green: #66bb6a;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); font: 14px/1.4 "Segoe UI", system-ui, sans-serif; }
+#app { display: flex; flex-direction: column; height: 100%; }
+
+header { display: flex; align-items: center; gap: 24px; padding: 10px 16px; background: var(--panel); border-bottom: 1px solid #000; }
+header h1 { font-size: 16px; margin: 0; font-weight: 600; }
+.stats { display: flex; gap: 18px; font-size: 16px; }
+.stat b { font-weight: 700; }
+.stat.lives { color: var(--red); } .stat.gold { color: var(--gold); }
+#conn { color: var(--red); } #conn.on { color: var(--green); }
+.actions { margin-left: auto; display: flex; gap: 8px; }
+
+button { background: var(--panel2); color: var(--text); border: 1px solid #3a3f4b; border-radius: 6px; padding: 6px 12px; cursor: pointer; font: inherit; }
+button:hover { border-color: var(--accent); }
+button.danger { border-color: #5a2a2a; } button.danger:hover { background: #4a1f1f; }
+button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+button:disabled { opacity: 0.4; cursor: default; }
+
+main { display: flex; flex: 1; min-height: 0; }
+.board { flex: 1; display: flex; align-items: center; justify-content: center; padding: 12px; min-width: 0;
+  background: repeating-conic-gradient(#1b1e24 0 25%, #191c21 0 50%) 0 0 / 40px 40px; }
+canvas#game { max-width: 100%; max-height: 100%; width: auto; height: auto; aspect-ratio: 16 / 9; cursor: crosshair; }
+
+aside { width: 320px; padding: 12px 14px; overflow-y: auto; background: var(--panel); border-left: 1px solid #000; }
+aside h2 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 14px 0 8px; }
+aside h2:first-child { margin-top: 0; }
+.hint, .muted { color: var(--muted); font-size: 12px; margin: 6px 0; }
+
+.build { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.build button { display: flex; flex-direction: column; align-items: flex-start; padding: 8px 10px; text-align: left; }
+.build button .name { font-weight: 600; }
+.build button .cost { color: var(--gold); font-size: 12px; }
+.build button .desc { color: var(--muted); font-size: 11px; }
+
+.selected { background: var(--panel2); border-radius: 8px; padding: 10px; }
+.selected .row { display: flex; justify-content: space-between; margin: 3px 0; }
+.selected .buttons { display: flex; gap: 8px; margin-top: 8px; }
+.selected .buttons button { flex: 1; }
+
+.leaders { margin: 0; padding-left: 20px; } .leaders li { margin: 2px 0; }
+
+.devchat { display: flex; gap: 6px; }
+.devchat input { flex: 1; min-width: 0; background: var(--panel2); color: var(--text); border: 1px solid #3a3f4b; border-radius: 6px; padding: 6px 8px; font: inherit; }
+.devchat #devuser { flex: 0 0 90px; }
+.quick { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.quick button { padding: 4px 8px; font-size: 12px; }
+
+.log { background: var(--panel2); border-radius: 8px; padding: 8px; height: 220px; overflow-y: auto; font-size: 12px; font-family: Consolas, monospace; }
+.log div { padding: 1px 0; color: var(--muted); }
+.log .spawn { color: #ff8a65; } .log .leak { color: var(--red); } .log .build { color: #90caf9; } .log .gameover { color: var(--red); font-weight: bold; }

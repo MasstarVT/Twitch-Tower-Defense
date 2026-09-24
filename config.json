@@ -1,0 +1,77 @@
+{
+  "map": "maps/default.json",
+  "tickRate": 60,
+  "snapshotRate": 20,
+
+  "streamer": {
+    "startGold": 150,
+    "startLives": 20,
+    "incomePerMinute": 10,
+    "sellRefund": 0.7,
+    "gameOverResetSeconds": 12
+  },
+
+  "economy": {
+    "startCoins": 20,
+    "coinsPerMessage": 2,
+    "messageCooldownSeconds": 15,
+    "activeBonusCoins": 10,
+    "activeBonusIntervalMinutes": 5,
+    "activeWindowMinutes": 10,
+    "leakRefundMultiplier": 1.5,
+    "commandCooldownSeconds": 2,
+    "maxLivingPerUser": 10,
+    "maxLivingTotal": 150,
+    "maxSpawnPerCommand": 10
+  },
+
+  "idleTrickle": {
+    "enabled": true,
+    "afterSeconds": 20,
+    "enemy": "goblin"
+  },
+
+  "enemies": {
+    "goblin": { "name": "Goblin", "cost": 10,  "hp": 40,   "speed": 110, "armor": 0, "lives": 1, "gold": 4,  "color": "#4caf50" },
+    "wolf":   { "name": "Wolf",   "cost": 20,  "hp": 55,   "speed": 190, "armor": 0, "lives": 1, "gold": 7,  "color": "#9e9e9e" },
+    "orc":    { "name": "Orc",    "cost": 25,  "hp": 140,  "speed": 85,  "armor": 1, "lives": 1, "gold": 10, "color": "#8bc34a" },
+    "knight": { "name": "Knight", "cost": 40,  "hp": 200,  "speed": 75,  "armor": 5, "lives": 2, "gold": 16, "color": "#90caf9" },
+    "tank":   { "name": "Tank",   "cost": 80,  "hp": 700,  "speed": 45,  "armor": 3, "lives": 3, "gold": 35, "color": "#795548" },
+    "boss":   { "name": "Boss",   "cost": 250, "hp": 2500, "speed": 40,  "armor": 6, "lives": 5, "gold": 120, "color": "#e53935" }
+  },
+
+  "towers": {
+    "archer": {
+      "name": "Archer", "cost": 50, "targeting": "first", "projectile": "arrow", "color": "#ffb74d",
+      "levels": [
+        { "damage": 12, "range": 170, "fireRate": 2.2, "projectileSpeed": 520, "upgradeCost": 40 },
+        { "damage": 20, "range": 190, "fireRate": 2.6, "projectileSpeed": 560, "upgradeCost": 70 },
+        { "damage": 34, "range": 210, "fireRate": 3.0, "projectileSpeed": 600 }
+      ]
+    },
+    "cannon": {
+      "name": "Cannon", "cost": 90, "targeting": "first", "projectile": "shell", "color": "#616161",
+      "levels": [
+        { "damage": 45,  "range": 150, "fireRate": 0.6, "projectileSpeed": 340, "splash": 55, "upgradeCost": 70 },
+        { "damage": 80,  "range": 165, "fireRate": 0.7, "projectileSpeed": 360, "splash": 65, "upgradeCost": 110 },
+        { "damage": 140, "range": 180, "fireRate": 0.8, "projectileSpeed": 380, "splash": 80 }
+      ]
+    },
+    "frost": {
+      "name": "Frost", "cost": 70, "targeting": "first", "projectile": "ice", "color": "#4fc3f7",
+      "levels": [
+        { "damage": 6,  "range": 150, "fireRate": 1.5, "projectileSpeed": 460, "slow": 0.4, "slowSeconds": 1.5, "upgradeCost": 55 },
+        { "damage": 10, "range": 165, "fireRate": 1.7, "projectileSpeed": 480, "slow": 0.5, "slowSeconds": 2.0, "upgradeCost": 90 },
+        { "damage": 16, "range": 180, "fireRate": 2.0, "projectileSpeed": 500, "slow": 0.6, "slowSeconds": 2.5 }
+      ]
+    },
+    "tesla": {
+      "name": "Tesla", "cost": 140, "targeting": "strongest", "projectile": "bolt", "color": "#ce93d8",
+      "levels": [
+        { "damage": 30, "range": 140, "fireRate": 1.0, "projectileSpeed": 2000, "chain": 3, "chainRange": 90, "upgradeCost": 110 },
+        { "damage": 50, "range": 155, "fireRate": 1.2, "projectileSpeed": 2000, "chain": 4, "chainRange": 100, "upgradeCost": 170 },
+        { "damage": 85, "range": 170, "fireRate": 1.4, "projectileSpeed": 2000, "chain": 6, "chainRange": 110 }
+      ]
+    }
+  }
+}
